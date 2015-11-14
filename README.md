@@ -7,3 +7,6 @@ Click on a cell to change its status (living/dead). Living cells are green.
 Use "Start" and "Stop" in the menu-bar to start and stop the evolution.
 
 To start the game simply run gameoflife.py in the src-dir.
+
+Note: TkInter is required. Install the python3-tk package (at least on linux,
+  I don't know about other OS).
