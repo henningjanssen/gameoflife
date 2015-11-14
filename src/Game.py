@@ -21,6 +21,7 @@ class Game(Thread):
         menubar = Tk.Menu()
         menubar.add_command(label="Start", command=self.startGame)
         menubar.add_command(label="Stop", command=self.stopGame)
+        menubar.add_command(label="Reset", command=self.resetGame)
         self.tk.config(menu=menubar)
 
         self.cells = []
@@ -92,3 +93,10 @@ class Game(Thread):
 
     def stopGame(self):
         self.running = False
+
+    def resetGame(self):
+        self.stopGame()
+        for i in range(self.width):
+            for j in range(self.height):
+                self.cells[i][j].alivetomorrow = False
+                self.cells[i][j].update()
